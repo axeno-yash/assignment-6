@@ -1,0 +1,149 @@
+@use "../abstracts" as *;
+
+.header {
+    font-family: "Satoshi";
+    .top-banner {
+        @include flexbox(row, space-around, center);
+        background-color: $primary;
+        color: $secondary;
+        height: to-rem(34);
+
+        .top-banner--ordinary {
+            font-size: $fs-12;
+            font-weight: $fw-400;
+
+            .top-banner--underlined {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+
+        .cross-icon {
+            visibility: hidden;
+            cursor: pointer;
+        }
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: to-rem(20) to-rem(16);
+
+        .brand-name {
+            font-family: "Integral CF";
+            font-weight: fw-700;
+            font-style: Bold;
+            font-size: $fs-24;
+        }
+
+        .navbar__menu-icon__logo {
+            @include flexbox();
+            gap: to-rem(16);
+        }
+
+        .navbar__cart-profile-search {
+            display: flex;
+            gap: to-rem(14);
+            cursor: pointer;
+        }
+
+        .navbar__desktop-menu,
+        .navbar__search-bar {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: $desktop) {
+    .header {
+        .top-banner {
+            height: to-rem(38);
+            .top-banner--ordinary {
+                font-size: $fs-14;
+                font-weight: $fw-500;
+                .top-banner--underlined {
+                    text-decoration: underline;
+                }
+            }
+            .cross-icon {
+                visibility: visible;
+            }
+        }
+
+        .navbar {
+            justify-content: flex-start;
+
+            .navbar__menu-icon__logo {
+                justify-content: left;
+                width: 20%;
+            }
+
+            .navbar__menu-searchbar-icons {
+                flex-grow: 1;
+                @include flexbox(row, space-between, center);
+                gap: to-rem(20);
+
+                .navbar__desktop-menu {
+                    @include flexbox();
+                    list-style: none;
+                    gap: to-rem(20);
+                    flex-shrink: 0;
+                }
+
+                .navbar__search-bar {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    max-width: to-rem(577);
+                    height: to-rem(48);
+                    background: $bg;
+                    border-radius: to-rem(30px);
+                    padding: 0 to-rem(16);
+                    gap: to-rem(10);
+
+                    .search-icon {
+                        width: to-rem(18);
+                        height: to-rem(18);
+                    }
+
+                    .search-input {
+                        font-family: "Satoshi";
+                        width: 100%;
+                        border: none;
+                        outline: none;
+                        background: transparent;
+                        font-size: $fs-16;
+                        color: $primary;
+
+                        &::placeholder {
+                            color: $primary;
+                            opacity: 40%;
+                        }
+                    }
+                }
+            }
+
+            .navbar__search {
+                display: none;
+            }
+
+            .navbar__desktop-menu {
+                display: flex;
+                gap: to-rem(32);
+
+                .desktop__menu-links {
+                    text-decoration: none;
+                    color: $primary;
+                }
+            }
+            .navbar__search-bar {
+                border-radius: to-rem(30);
+            }
+        }
+
+        .menu-icon {
+            display: none;
+        }
+    }
+}
