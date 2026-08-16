@@ -33,7 +33,6 @@
         .brand-name {
             font-family: "Integral CF";
             font-weight: fw-700;
-            font-style: Bold;
             font-size: $fs-24;
         }
 
@@ -73,6 +72,7 @@
 
         .navbar {
             justify-content: flex-start;
+            padding: to-rem(24) to-rem(100);
 
             .navbar__menu-icon__logo {
                 justify-content: left;

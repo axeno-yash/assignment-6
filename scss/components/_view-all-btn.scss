@@ -1,0 +1,31 @@
+@use "../abstracts/" as *;
+
+.view-all-btn {
+    display: block;
+    width: 100%;
+    margin: to-rem(24) auto 0;
+    padding: to-rem(16) to-rem(54);
+    outline: none;
+    border: to-rem(1) solid $black-alpha10;
+    border-radius: to-rem(30);
+    background-color: $secondary;
+    color: $primary;
+    cursor: pointer;
+    font-size: $fs-14;
+    font-weight: $fw-500;
+}
+
+@media (min-width: $tablet) {
+    .view-all-btn {
+        width: fit-content;
+        max-width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (min-width: $desktop) {
+    .view-all-btn {
+        margin: auto;
+        margin-top: to-rem(20);
+    }
+}

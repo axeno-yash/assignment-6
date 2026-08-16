@@ -6,6 +6,12 @@
 
 @use "./layout/header";
 @use "./layout/footer";
-@use "./components/main";
 
 @use "./pages/home";
+@use "./pages/product";
+@use "./pages/login";
+@use "./pages/cart";
+
+@use "./components/newsletter";
+@use "./components/view-all-btn";
+@use "./components/redirect-path"

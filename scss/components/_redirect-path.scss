@@ -1,0 +1,23 @@
+@use "../abstracts/" as *;
+
+.redirect-patch {
+    display: flex;
+    gap: 5px;
+    padding: to-rem(20) to-rem(16);
+
+    .redirect-path {
+        font-weight: $fw-400;
+        font-size: $fs-16;
+        line-height: 100%;
+        letter-spacing: 0%;
+        opacity: 0.6;
+    }
+}
+    
+@media (min-width: $desktop) {
+    .main {
+        .redirect-patch {
+            padding: to-rem(36) to-rem(100) to-rem(24);
+        }
+    }
+}

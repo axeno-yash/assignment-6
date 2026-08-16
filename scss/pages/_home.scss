@@ -1,0 +1,566 @@
+@use "../abstracts/" as *;
+
+.main {
+    font-family: "Satoshi";
+    .hero {
+        display: flex;
+        flex-direction: column;
+        background-color: $bg;
+
+        .hero__content {
+            font-family: Satoshi;
+            background-color: $bg;
+            padding: to-rem(40) to-rem(16) 0 to-rem(16);
+            display: flex;
+            flex-direction: column;
+            gap: to-rem(20);
+
+            .hero__heading {
+                font-family: "Integral CF";
+                font-weight: $fw-700;
+                font-size: $fs-36;
+            }
+            .hero__para {
+                font-weight: $fw-400;
+                font-size: $fs-14;
+            }
+            .hero__btn {
+                font-weight: $fw-500;
+                background-color: $primary;
+                color: $secondary;
+                font-size: $fs-16;
+                border-radius: to-rem(30);
+                padding: to-rem(16) to-rem(54);
+                text-align: center;
+            }
+            .hero__blocks {
+                flex-wrap: wrap;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: to-rem(27);
+
+                .block__number {
+                    font-weight: $fw-700;
+                    font-size: $fs-24;
+                    line-height: 100%;
+                }
+
+                .block__string {
+                    font-weight: $fw-400;
+                    font-size: $fs-12;
+                    line-height: to-rem(22);
+                }
+
+                .vertical-line--1 {
+                    width: to-rem(1);
+                    height: to-rem(52);
+                    background: rgba(0, 0, 0, 0.1);
+                }
+                .vertical-line--2 {
+                    width: to-rem(1);
+                    height: to-rem(52);
+                    background: rgba(0, 0, 0, 0.1);
+                    display: none;
+                }
+            }
+        }
+
+        .hero__image {
+            width: 100%;
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .brand-strip {
+        background-color: $primary;
+        height: to-rem(122);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: to-rem(14);
+        .brand {
+            height: to-rem(32);
+        }
+    }
+
+    .new-arrivals {
+        font-family: "Satoshi";
+        padding: to-rem(45) to-rem(10);
+
+        .new-arrivals__heading {
+            padding-bottom: to-rem(32);
+            text-align: center;
+            font-family: "Integral CF";
+            font-weight: $fw-700;
+            font-size: $fs-32;
+            line-height: 100%;
+            letter-spacing: 0%;
+            vertical-align: middle;
+        }
+
+        .new-arrivals__blocks {
+            display: flex;
+            gap: to-rem(20);
+            overflow-x: auto;
+
+            .product-card {
+                width: to-rem(200);
+                flex-shrink: 0;
+
+                .product-card__image {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+                .new-arrivals__rating {
+                    display: flex;
+                    gap: to-rem(11);
+                    align-items: center;
+
+                    .rating-h2 {
+                        font-weight: $fw-400;
+                        font-size: $fs-12;
+                        line-height: 100%;
+                        letter-spacing: 0%;
+                    }
+                    .rating-span {
+                        opacity: 0.6;
+                    }
+                }
+                .new-arrivals__pricing {
+                    display: flex;
+                    gap: to-rem(5);
+                    align-items: center;
+                    .new-arrivals__price {
+                        font-size: $fs-20;
+                        font-weight: $fw-700;
+                    }
+                    .new-arrivals__discount {
+                        text-decoration: line-through;
+                        opacity: 40%;
+                    }
+                    .new-arrivals__percent {
+                        border-radius: to-rem(30);
+                        background-color: $red-alpha60;
+                        color: $red;
+                        padding: to-rem(6) to-rem(14);
+                        font-weight: $fw-500;
+                        font-size: $fs-10;
+                    }
+                }
+            }
+        }
+
+        .product-card {
+            .new-arrivals__product-name {
+                font-weight: $fw-700;
+                font-size: $fs-16;
+                padding: to-rem(10) 0 to-rem(4) 0;
+            }
+        }
+    }
+
+    .top-selling {
+        font-family: "Satoshi";
+        padding: to-rem(45) to-rem(10);
+
+        .top-selling__heading {
+            padding-bottom: to-rem(32);
+            text-align: center;
+            font-family: "Integral CF";
+            font-weight: $fw-700;
+            font-size: $fs-32;
+            line-height: 100%;
+            letter-spacing: 0%;
+            vertical-align: middle;
+        }
+
+        .top-selling__blocks {
+            display: flex;
+            gap: to-rem(20);
+            overflow-x: auto;
+
+            .topselling-card {
+                width: to-rem(200);
+                flex-shrink: 0;
+
+                .topselling-card__image {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+                .top-selling__rating {
+                    display: flex;
+                    gap: to-rem(11);
+                    align-items: center;
+
+                    .rating-h2 {
+                        font-weight: $fw-400;
+                        font-size: $fs-12;
+                        line-height: 100%;
+                        letter-spacing: 0%;
+                    }
+                    .rating-span {
+                        opacity: 0.6;
+                    }
+                }
+                .top-selling__pricing {
+                    display: flex;
+                    gap: to-rem(5);
+                    align-items: center;
+                    .top-selling__price {
+                        font-size: $fs-20;
+                        font-weight: $fw-700;
+                    }
+                    .top-selling__discount {
+                        text-decoration: line-through;
+                        opacity: 40%;
+                    }
+                    .top-selling__percent {
+                        border-radius: to-rem(30);
+                        background-color: $red-alpha60;
+                        color: $red;
+                        padding: to-rem(6) to-rem(14);
+                        font-weight: $fw-500;
+                        font-size: $fs-10;
+                    }
+                }
+            }
+        }
+
+        .topselling-card {
+            .top-selling__product-name {
+                font-weight: $fw-700;
+                font-size: $fs-16;
+                padding: to-rem(10) 0 to-rem(4) 0;
+            }
+        }
+    }
+
+    .browseby-style {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 to-rem(16);
+        border-radius: to-rem(20);
+        background-color: $gray-300;
+        .browseby-style__heading {
+            text-align: center;
+            font-family: "Integral CF";
+            font-weight: $fw-700;
+            font-size: $fs-32;
+            line-height: 100%;
+            letter-spacing: 0%;
+            vertical-align: middle;
+            padding: to-rem(40) to-rem(56) to-rem(28);
+        }
+        .browseby-style__blocks {
+            display: flex;
+            flex-direction: column;
+            gap: to-rem(16);
+            @for $i from 0 through 3 {
+                .browseby-style__block--#{$i} {
+                    position: relative;
+                    width: to-rem(300);
+                    height: to-rem(200);
+                    overflow: hidden;
+                    border-radius: to-rem(20);
+                    background-color: $secondary;
+
+                    .browseby-img {
+                        width: 100%;
+                        height: 100%;
+                        scale: 1.8;
+                        display: block;
+                        object-fit: contain;
+                        transform: scaleX(-1);
+                    }
+                    .browseby-type {
+                        position: absolute;
+                        top: to-rem(20);
+                        left: to-rem(10);
+                        font-weight: $fw-700;
+                        font-size: $fs-24;
+                        line-height: 100%;
+                        letter-spacing: 0%;
+                        vertical-align: middle;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .testimonials {
+        padding-bottom: to-rem(50);
+        .testimonials__heading {
+            padding-top: to-rem(50);
+            padding-bottom: to-rem(32);
+            text-align: center;
+            font-family: "Integral CF";
+            font-weight: $fw-700;
+            font-size: $fs-32;
+            line-height: to-rem(36);
+            letter-spacing: 0%;
+            vertical-align: middle;
+            .testimonials__heading-arrows {
+                visibility: hidden;
+            }
+        }
+
+        .testimonials__blocks {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: to-rem(20);
+            overflow-x: auto;
+            overflow-y: hidden;
+
+            .testimonials__block {
+                display: flex;
+                flex: 0 0 to-rem(360);
+                flex-direction: column;
+                gap: to-rem(10);
+                width: to-rem(360);
+                padding: to-rem(28) to-rem(32);
+                border: to-rem(1) solid $black-alpha10;
+                border-radius: to-rem(30);
+                .testimonials__title {
+                    display: flex;
+                    gap: to-rem(5);
+                    align-items: center;
+                    font-family: "Satoshi";
+                    font-weight: $fw-700;
+                    font-size: $fs-16;
+                    line-height: to-rem(22);
+                    letter-spacing: 0%;
+                }
+
+                .testimonials__para {
+                    font-weight: $fw-400;
+                    font-size: $fs-14;
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $tablet) {
+    .main {
+        .hero {
+            flex-direction: row;
+            align-items: stretch;
+
+            .hero__content,
+            .hero__image {
+                flex: 1;
+            }
+
+            .hero__content {
+                padding: to-rem(40) to-rem(18) to-rem(20);
+                gap: to-rem(24);
+                justify-content: center;
+
+                .hero__heading {
+                    font-size: to-rem(30);
+                }
+
+                .hero__blocks {
+                    justify-content: flex-start;
+                    gap: to-rem(18);
+
+                    .block__number {
+                        font-size: $fs-16;
+                    }
+
+                    .block__string {
+                        font-size: $fs-10;
+                    }
+
+                    .vertical-line--2 {
+                        display: block;
+                    }
+                }
+
+                .hero__btn {
+                    width: fit-content;
+                    padding: to-rem(8) to-rem(32);
+                }
+            }
+        }
+
+        .new-arrivals {
+            .new-arrivals__blocks {
+                flex: 1 1 to-rem(220);
+            }
+
+        }
+
+        .top-selling {
+            .top-selling__blocks {
+                flex: 1 1 to-rem(220);
+            }
+
+        }
+    }
+}
+
+@media (min-width: $desktop) {
+    .main {
+        .hero {
+            .hero__content {
+                padding: to-rem(100) to-rem(100) 0;
+                width: 50%;
+                gap: to-rem(32);
+
+                .vertical-line--2 {
+                    display: none;
+                }
+
+                .hero__heading {
+                    font-size: $fs-64;
+                }
+
+                .hero__para,
+                .hero__btn {
+                    font-size: $fs-16;
+                }
+
+                .hero__blocks {
+                    .block__number {
+                        font-size: $fs-40;
+                    }
+
+                    .block__string {
+                        font-size: $fs-16;
+                    }
+                }
+            }
+
+            .hero__image {
+                width: 50%;
+            }
+        }
+
+        .brand-strip {
+            gap: to-rem(106);
+
+            .brand {
+                height: to-rem(24);
+            }
+        }
+
+        .new-arrivals {
+            padding: to-rem(72) to-rem(100) to-rem(64);
+
+            .new-arrivals__heading {
+                font-size: $fs-48;
+                padding-bottom: to-rem(55);
+            }
+
+            .new-arrivals__blocks {
+                flex-wrap: wrap;
+                overflow-x: visible;
+                padding-bottom: 0;
+                gap: to-rem(32);
+
+                .product-card {
+                    flex: 1 1 to-rem(220);
+                    .new-arrivals__product-name {
+                        font-weight: $fw-700;
+                        font-size: $fs-20;
+                        padding: to-rem(16) 0 to-rem(8) 0;
+                    }
+                }
+            }
+
+        }
+
+        .top-selling {
+            padding: to-rem(72) to-rem(100) to-rem(64);
+
+            .top-selling__heading {
+                font-size: $fs-48;
+                padding-bottom: to-rem(55);
+            }
+
+            .top-selling__blocks {
+                flex-wrap: wrap;
+                overflow-x: visible;
+                padding-bottom: 0;
+                gap: to-rem(32);
+
+                .topselling-card {
+                    flex: 1 1 to-rem(220);
+                    .top-selling__product-name {
+                        font-weight: $fw-700;
+                        font-size: $fs-20;
+                        padding: to-rem(16) 0 to-rem(8) 0;
+                    }
+                }
+            }
+
+        }
+
+        .browseby-style {
+            max-width: to-rem(1240);
+            margin: 0 auto;
+            padding: 0 to-rem(64) to-rem(76);
+
+            .browseby-style__heading {
+                padding: to-rem(70) 0 to-rem(64);
+                font-size: $fs-48;
+            }
+
+            .browseby-style__blocks {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                width: 100%;
+                gap: to-rem(20);
+
+                .browseby-style__block--0,
+                .browseby-style__block--3 {
+                    grid-column: span 1;
+                }
+
+                .browseby-style__block--1,
+                .browseby-style__block--2 {
+                    grid-column: span 2;
+                }
+
+                @for $i from 0 through 3 {
+                    .browseby-style__block--#{$i} {
+                        width: 100%;
+                        height: to-rem(289);
+                        .browseby-type {
+                            font-size: $fs-36;
+                        }
+                    }
+                }
+            }
+        }
+
+        .testimonials {
+            .testimonials__heading {
+                padding-top: to-rem(80);
+                padding-bottom: to-rem(55);
+                font-size: $fs-48;
+                margin-left: to-rem(200);
+                .testimonials__heading-arrows {
+                    margin-left: to-rem(200);
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}

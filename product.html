@@ -5,237 +5,348 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product - SHOP.CO</title>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
     <header class="header">
         <div class="top-banner">
-            <h3 class="top-banner--ordinary">Sign up and get 20% off to your first order. <span
-                    class="top-banner--underlined">Sign Up Now</span></h3>
+            <div></div>
+            <h3 class="top-banner--ordinary">Sign up and get 20% off to your first order.
+                <span class="top-banner--underlined">Sign Up Now</span>
+            </h3>
+            <img class="cross-icon" src="./assets/icons/cross.svg" alt="cross-icon">
         </div>
         <nav class="navbar">
-            <img src="#menu-ic" alt="">
-            <h2>SHOP.CO</h2>
-            <section>
-                <ul>
-                    <li><a href="#">A</a></li>
-                    <li><a href="#">A</a></li>
-                    <li><a href="#">A</a></li>
-                    <li><a href="#">A</a></li>
+            <section class="navbar__menu-icon__logo">
+                <img class="menu-icon" src="./assets/icons/menu.svg" alt="menu-icon">
+                <h2 class="brand-name">SHOP.CO</h2>
+            </section>
+            <section class="navbar__menu-searchbar-icons">
+                <ul class="navbar__desktop-menu">
+                    <li><a class="desktop__menu-links" href="#">Shop <img src="./assets/icons/down-arrowkey.svg"
+                                alt=""></a></li>
+                    <li><a class="desktop__menu-links" href="#">On Sale</a></li>
+                    <li><a class="desktop__menu-links" href="#">New Arrivals</a></li>
+                    <li><a class="desktop__menu-links" href="#">Brands</a></li>
                 </ul>
-                <div class="input-wrapper">
-                    <img src="#search-ic" alt="">
-                    <input type="text" placeholder="Search here..." />
+                <div class="navbar__search-bar">
+                    <img class="search-icon" src="./assets/icons/search.svg" alt="search-icon">
+                    <input class="search-input" type="text" placeholder="Search for products" />
                 </div>
-                <div>
-                    <img src="search" alt="">
-                    <img src="cart" alt="">
-                    <img src="profile" alt="">
+                <div class="navbar__cart-profile-search">
+                    <img class="navbar__search" src="./assets/icons/search.svg" alt="search-icon">
+                    <img class="navbar__cart" src="./assets/icons/cart.svg" alt="cart-icon">
+                    <img class="navbar__profile" src="./assets/icons/profile.svg" alt="profile-icon">
                 </div>
             </section>
         </nav>
     </header>
-    <main>
+    <main class="main">
         <section class="redirect-patch">
             <h4 class="redirect-path">
                 Home
             </h4>
-            <img src="svg" alt="">
+            <img src="./assets/icons/arrow.svg" alt="arrow">
             <h4 class="redirect-path">
                 Shop
             </h4>
-            <img src="svg" alt="">
+            <img src="./assets/icons/arrow.svg" alt="arrow">
             <h4 class="redirect-path">
                 Men
             </h4>
-            <img src="svg" alt="">
+            <img src="./assets/icons/arrow.svg" alt="arrow">
             <h4 class="redirect-path">
                 T-shirts
             </h4>
         </section>
         <section class="product">
-            <div class="product__img">
-                <img src="#" alt="">
-                <img src="#" alt="">
-                <img src="#" alt="">
-                <img src="#" alt="">
+            <div class="product__imgs">
+                <img class="product__main-img" src="./assets/images/product1.png" alt="One Life Graphic T-shirt">
+                <div class="product__thumbnails">
+                    <img class="tshirt-view tshirt-view-0" src="./assets/images/product1.png" alt="t-shirt front view">
+                    <img class="tshirt-view tshirt-view-1" src="./assets/images/product2.png" alt="t-shirt back view">
+                    <img class="tshirt-view tshirt-view-2" src="./assets/images/product3.png" alt="t-shirt model view">
+                </div>
             </div>
             <div class="product__content">
-                <h2>ONE LIFE GRAPHIC T-SHIRT</h2>
-                <section class="product__rating">
-                    <img src="stars" alt="">
-                    <h5>4.5/<span>5</span></h5>
-                </section>
+                <h2 class="product__content-title">ONE LIFE GRAPHIC T-SHIRT</h2>
+                <div class="product__content-rating">
+                    <div class="product__content-stars">
+                        <img src="./assets/icons/star.svg" alt="rating-star">
+                        <img src="./assets/icons/star.svg" alt="rating-star">
+                        <img src="./assets/icons/star.svg" alt="rating-star">
+                        <img src="./assets/icons/star.svg" alt="rating-star">
+                        <img src="./assets/icons/star.svg" alt="rating-star">
+                    </div>
+                    <h5 class="rating-h2">4.5/<span class="rating-span">5</span></h5>
+                </div>
                 <section class="product__pricing">
                     <h3 class="product__price">$120</h3>
                     <h3 class="product__discount">$400</h3>
                     <h4 class="product__percent">-40%</h3>
                 </section>
-                <p class="product__para"></p>
+                <p class="product__para">This graphic t-shirt which is perfect for any occasion. Crafted from a soft and
+                    breathable fabric, it offers superior comfort and style.</p>
                 <hr>
                 <section class="product__colors">
-                    <div>Select Colors</div>
+                    <div class="heading-light">Select Colors</div>
                     <div class="product__colors--variants">
-                        <div class="product__colors-variants--variant"></div>
-                        <div class="product__colors-variants--variant"></div>
-                        <div class="product__colors-variants--variant"></div>
+                        <div class="product__colors-variants--0"></div>
+                        <div class="product__colors-variants--1"></div>
+                        <div class="product__colors-variants--2"></div>
                     </div>
                 </section>
                 <hr>
                 <section class="product__sizes">
-                    <div>Choose Size</div>
+                    <div class="heading-light">Choose Size</div>
                     <div class="product__sizes--variants">
-                        <div class="product__size-variants--variant">Small</div>
-                        <div class="product__size-variants--variant">Medium</div>
-                        <div class="product__size-variants--variant">Large</div>
-                        <div class="product__size-variants--variant">X-Large</div>
+                        <div class="product__sizes--variant">Small</div>
+                        <div class="product__sizes--variant">Medium</div>
+                        <div class="product__sizes--variant heading-highlighted">Large</div>
+                        <div class="product__sizes--variant">X-Large</div>
                     </div>
                 </section>
                 <hr>
-                <section>
-                    <div>
+                <section class="product__count-cart">
+                    <div class="product-count">
                         <img src="-" alt="">
                         <h4>1</h4>
                         <img src="+" alt="">
                     </div>
-                    <button>Add to Cart</button>
+                    <button type="button" class="product-cart btn-reset heading-highlighted">Add to Cart</button>
                 </section>
             </div>
         </section>
         <section class="all-reviews">
-            <div>
-                <div>Product Details</div>
-                <div>Rating & Reviews</div>
-                <div>FAQs</div>
+            <div class="all-reviews__nav">
+                <div class="">Product Details</div>
+                <div class="">Rating & Reviews</div>
+                <div class="">FAQs</div>
             </div>
             <hr>
-            <div>
-                <div>All Reviews <span>(451)</span></div>
-                <img src="setting" alt="">
-                <div>Latest <img src="" alt=""></div>
-                <div>Write a Review</div>
-                <div>
-                    <div>Hello!</div>
-                    <div>Hello!</div>
-                    <div>Hello!</div>
-                    <div>Hello!</div>
-                    <div>Hello!</div>
-                    <div>Hello!</div>
+            <div class="">
+                <div class="all-review__filter">
+                    <div>All Reviews <span>(451)</span></div>
+                    <div class="filters-left">
+                        <img src="setting" alt="">
+                        <div>Latest <img src="" alt=""></div>
+                        <div>Write a Review</div>
+                    </div>
                 </div>
-                <button>Load More Reviews</button>
+                <div>
+                    <div class="reviews__blocks">
+                        <div class="reviews__block">
+                            <div class="reviews__stars">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                            </div>
+                            <div class="reviews__title">
+                                <h5 class="reviews__name">Sarah M.</h4>
+                                    <img src="./assets/images/tick.png" alt="tick-icon">
+                            </div>
+                            <p class="reviews__para">"As someone who's always on the lookout for unique fashion pieces,
+                                I'm
+                                thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but
+                                also
+                                on-point with the latest trends.”</p>
+                        </div>
+                        <div class="reviews__block">
+                            <div class="reviews__stars">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                            </div>
+                            <div class="reviews__title">
+                                <h5 class="reviews__name">Sarah M.</h4>
+                                    <img src="./assets/images/tick.png" alt="tick-icon">
+                            </div>
+                            <p class="reviews__para">"As someone who's always on the lookout for unique fashion pieces,
+                                I'm
+                                thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but
+                                also
+                                on-point with the latest trends.”</p>
+                        </div>
+                        <div class="reviews__block">
+                            <div class="reviews__stars">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                            </div>
+                            <div class="reviews__title">
+                                <h5 class="reviews__name">Sarah M.</h4>
+                                    <img src="./assets/images/tick.png" alt="tick-icon">
+                            </div>
+                            <p class="reviews__para">"As someone who's always on the lookout for unique fashion pieces,
+                                I'm
+                                thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but
+                                also
+                                on-point with the latest trends.”</p>
+                        </div>
+                        <div class="reviews__block">
+                            <div class="reviews__stars">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                            </div>
+                            <div class="reviews__title">
+                                <h5 class="reviews__name">Sarah M.</h4>
+                                    <img src="./assets/images/tick.png" alt="tick-icon">
+                            </div>
+                            <p class="reviews__para">"As someone who's always on the lookout for unique fashion pieces,
+                                I'm
+                                thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but
+                                also
+                                on-point with the latest trends.”</p>
+                        </div>
+                        <div class="reviews__block">
+                            <div class="reviews__stars">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                            </div>
+                            <div class="reviews__title">
+                                <h5 class="reviews__name">Sarah M.</h4>
+                                    <img src="./assets/images/tick.png" alt="tick-icon">
+                            </div>
+                            <p class="reviews__para">"As someone who's always on the lookout for unique fashion pieces,
+                                I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse
+                                but also on-point with the latest trends.”</p>
+                        </div>
+                        <div class="reviews__block">
+                            <div class="reviews__stars">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                            </div>
+                            <div class="reviews__title">
+                                <h5 class="reviews__name">Sarah M.</h4>
+                                    <img src="./assets/images/tick.png" alt="tick-icon">
+                            </div>
+                            <p class="reviews__para">"As someone who's always on the lookout for unique fashion pieces,
+                                I'm
+                                thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but
+                                also
+                                on-point with the latest trends.”</p>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="view-all-btn">Load More Reviews</button>
             </div>
         </section>
         <section class="recommendation">
-            <h2>YOU MIGHT ALSO LIKE</h2>
-            <div>
-                <div class="">
-                    <img src="cloth" alt="" srcset="">
-                    <h4 class="new-arrivals__heading"></h4>
-                    <div class="new-arrivals__rating">
-                        <img src="stars" alt="">
-                        <h5>4.5/<span>5</span></h5>
-                    </div>
-                    <div class="new-arrivals__pricing">
-                        <h3 class="new-arrivals__price">$120</h3>
-                        <h3 class="new-arrivals__discount">$120</h3>
-                        <h4 class="new-arrivals__percent">$120</h3>
-                    </div>
-                </div>
-                <div class="">
-                    <img src="cloth" alt="" srcset="">
-                    <h4 class="new-arrivals__heading"></h4>
-                    <div class="new-arrivals__rating">
-                        <img src="stars" alt="">
-                        <h5>4.5/<span>5</span></h5>
-                    </div>
-                    <div class="new-arrivals__pricing">
-                        <h3 class="new-arrivals__price">$120</h3>
-                        <h3 class="new-arrivals__discount">$120</h3>
-                        <h4 class="new-arrivals__percent">$120</h3>
-                    </div>
-                </div>
-                <div class="">
-                    <img src="cloth" alt="" srcset="">
-                    <h4 class="new-arrivals__heading"></h4>
-                    <div class="new-arrivals__rating">
-                        <img src="stars" alt="">
-                        <h5>4.5/<span>5</span></h5>
-                    </div>
-                    <div class="new-arrivals__pricing">
-                        <h3 class="new-arrivals__price">$120</h3>
-                        <h3 class="new-arrivals__discount">$120</h3>
-                        <h4 class="new-arrivals__percent">$120</h3>
-                    </div>
-                </div>
-                <div class="">
-                    <img src="cloth" alt="" srcset="">
-                    <h4 class="new-arrivals__heading"></h4>
-                    <div class="new-arrivals__rating">
-                        <img src="stars" alt="">
-                        <h5>4.5/<span>5</span></h5>
-                    </div>
-                    <div class="new-arrivals__pricing">
-                        <h3 class="new-arrivals__price">$120</h3>
-                        <h3 class="new-arrivals__discount">$120</h3>
-                        <h4 class="new-arrivals__percent">$120</h3>
-                    </div>
-                </div>
-            </div>
+            <h2 class="recommendation__heading heading">YOU MIGHT ALSO LIKE IT</h2>
+            <section class="recommendation__blocks" id="recommendation-container"></section>
+            <button type="button" class="view-all-btn">View All</button>
         </section>
         <section class="newsletter">
-            <h2>STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
+            <h2 class="newsletter__heading">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
             <div class="newsletter__reachout">
-                <div class="input-wrapper">
-                    <img src="#mail-ic" alt="">
-                    <input type="text" placeholder="Enter your email address">
+                <div class="newsletter__input">
+                    <img class="mail-icon" src="./assets/icons/mail.svg" alt="mail-icon">
+                    <input class="mail-input" type="text" placeholder="Enter your email address" />
                 </div>
-                <button>Subscribe to Newsletter</button>
+                <button class="newsletter__subscribe">Subscribe to Newsletter</button>
             </div>
         </section>
     </main>
-    <footer class="footer">
-        <section class="footer__grid">
-            <div>
-                <h3>A</h3>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-            </div>
-            <div>
-                <h3>A</h3>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-            </div>
-            <div>
-                <h3>A</h3>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-            </div>
-            <div>
-                <h3>A</h3>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-            </div>
+    <footer>
+        <section class="footer">
+            <section class="footer__info">
+                <h2 class="footer__brand-name">SHOP.CO</h2>
+                <p class="footer__para">We have clothes that suits your style and which you’re proud to wear. From women
+                    to men.</p>
+                <div class="footer__socials">
+                    <img class="socials-img" src="./assets/icons/twitter.svg" alt="Twitter">
+                    <img class="socials-img" src="./assets/icons/facebook.svg" alt="Facebook">
+                    <img class="socials-img" src="./assets/icons/insta.svg" alt="Instagram">
+                    <img class="socials-img" src="./assets/icons/github.svg" alt="GitHub">
+                </div>
+            </section>
+            <section class="footer__grid">
+                <div>
+                    <h3 class="grid-heading">COMPANY</h3>
+                    <h4 class="grid-content">About</h4>
+                    <h4 class="grid-content">Features</h4>
+                    <h4 class="grid-content">Works</h4>
+                    <h4 class="grid-content">Career</h4>
+                </div>
+                <div>
+                    <h3 class="grid-heading">HELP</h3>
+                    <h4 class="grid-content">Customer Support</h4>
+                    <h4 class="grid-content">Delivery Details</h4>
+                    <h4 class="grid-content">Terms &amp; Conditions</h4>
+                    <h4 class="grid-content">Privacy Policy</h4>
+                </div>
+                <div>
+                    <h3 class="grid-heading">FAQ</h3>
+                    <h4 class="grid-content">Account</h4>
+                    <h4 class="grid-content">Manage Deliveries</h4>
+                    <h4 class="grid-content">Orders</h4>
+                    <h4 class="grid-content">Payments</h4>
+                </div>
+                <div>
+                    <h3 class="grid-heading">RESOURCES</h3>
+                    <h4 class="grid-content">Free eBooks</h4>
+                    <h4 class="grid-content">Development Tutorial</h4>
+                    <h4 class="grid-content">How to - Blog</h4>
+                    <h4 class="grid-content">Youtube Playlist</h4>
+                </div>
+            </section>
         </section>
         <hr>
         <div class="footer__bottom">
-            <div class="footer__right-reserved"></div>
+            <div class="footer__right-reserved">Shop.co © 2000-2023, All Rights Reserved</div>
             <div class="footer__brand-names">
-                <img src="#" alt="">
-                <img src="#" alt="">
-                <img src="#" alt="">
-                <img src="#" alt="">
-                <img src="#" alt="">
+                <img src="./assets/images/brand-names.png" alt="brand-names">
             </div>
         </div>
     </footer>
+
+    <script>
+        const RecommendationContainer = document.querySelector('#recommendation-container');
+        fetch('./products.json')
+            .then(response => response.json())
+            .then(products => {
+                RecommendationContainer.innerHTML = products.map(product => `
+                    <div class="recommendation-card">
+                        <img src="${product.image}" alt="${product.name}" class="recommendation-card__image">
+                        <h4 class="recommendation__product-name">${product.name}</h4>
+                        <div class="recommendation__rating">
+                            <div class="recommendation__stars">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                                <img src="./assets/icons/star.svg" alt="rating-star">
+                            </div>
+                            <h5 class="rating-h2">${product.rating}/<span class="rating-span">5</span></h5>
+                        </div>
+                        <div class="recommendation__pricing">
+                            <h3 class="recommendation__price">$${product.price}</h3>
+                            ${product.originalPrice ? `<h3 class="recommendation__discount">$${product.originalPrice}</h3>` : ''}
+                            ${product.discount ? `<h4 class="recommendation__percent">-${product.discount}%</h4>` : ''}
+                        </div>
+                    </div>
+                `).join('');
+            })
+            .catch(error => {
+                console.error('Error loading products:', error);
+            });
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,88 @@
+@use "../abstracts/" as *;
+
+.newsletter {
+    font-family: "Satoshi";
+    border-radius: to-rem(30);
+    background-color: $primary;
+    color: $secondary;
+    padding: to-rem(32) to-rem(24);
+    margin: to-rem(50) to-rem(16) 0;
+
+    .newsletter__heading {
+        font-family: "Integral CF";
+        font-weight: $fw-700;
+        font-size: $fs-32;
+        line-height: to-rem(35);
+    }
+
+    .newsletter__reachout {
+        padding-top: to-rem(32);
+        display: flex;
+        flex-direction: column;
+        gap: to-rem(12);
+        .newsletter__input {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: to-rem(48);
+            border-radius: to-rem(30);
+            padding: 0 to-rem(16);
+            gap: to-rem(10);
+            background-color: $bg;
+
+            .mail-icon {
+                width: to-rem(18);
+                height: to-rem(18);
+            }
+
+            .mail-input {
+                font-family: "Satoshi";
+                min-width: 0;
+                width: 100%;
+                font-size: $fs-16;
+                color: $primary;
+                border: 0;
+                outline: 0;
+                appearance: none;
+                background-color: transparent;
+
+                &::placeholder {
+                    color: $primary;
+                    opacity: 0.4;
+                }
+            }
+        }
+
+        .newsletter__subscribe {
+            padding: to-rem(12);
+            border-radius: to-rem(30);
+            outline: none;
+            border: none;
+            font-weight: $fw-500;
+            font-size: $fs-14;
+            line-height: 100%;
+            letter-spacing: 0%;
+            cursor: pointer;
+        }
+    }
+}
+
+
+@media (min-width: $desktop) {
+    .newsletter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 to-rem(100);
+        padding: to-rem(36) to-rem(64);
+
+        .newsletter__heading {
+            width: 50%;
+        }
+
+        .newsletter__reachout {
+            width: 30%;
+            padding-top: 0;
+        }
+    }
+}

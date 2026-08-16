@@ -5,96 +5,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - SHOP.CO</title>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
     <header class="header">
         <div class="top-banner">
+            <div></div>
             <h3 class="top-banner--ordinary">Sign up and get 20% off to your first order.
                 <span class="top-banner--underlined">Sign Up Now</span>
             </h3>
+            <img class="cross-icon" src="./assets/icons/cross.svg" alt="cross-icon">
         </div>
         <nav class="navbar">
-            <img src="#menu-ic" alt="">
-            <h2>SHOP.CO</h2>
-            <section>
-                <ul>
-                    <li><a href="#">A</a></li>
-                    <li><a href="#">A</a></li>
-                    <li><a href="#">A</a></li>
-                    <li><a href="#">A</a></li>
+            <section class="navbar__menu-icon__logo">
+                <img class="menu-icon" src="./assets/icons/menu.svg" alt="menu-icon">
+                <h2 class="brand-name">SHOP.CO</h2>
+            </section>
+            <section class="navbar__menu-searchbar-icons">
+                <ul class="navbar__desktop-menu">
+                    <li><a class="desktop__menu-links" href="#">Shop <img src="./assets/icons/down-arrowkey.svg"
+                                alt=""></a></li>
+                    <li><a class="desktop__menu-links" href="#">On Sale</a></li>
+                    <li><a class="desktop__menu-links" href="#">New Arrivals</a></li>
+                    <li><a class="desktop__menu-links" href="#">Brands</a></li>
                 </ul>
-                <div class="input-wrapper">
-                    <img src="#search-ic" alt="">
-                    <input type="text" placeholder="Search here..." />
+                <div class="navbar__search-bar">
+                    <img class="search-icon" src="./assets/icons/search.svg" alt="search-icon">
+                    <input class="search-input" type="text" placeholder="Search for products" />
                 </div>
-                <div>
-                    <img src="search" alt="">
-                    <img src="cart" alt="">
-                    <img src="profile" alt="">
+                <div class="navbar__cart-profile-search">
+                    <img class="navbar__search" src="./assets/icons/search.svg" alt="search-icon">
+                    <img class="navbar__cart" src="./assets/icons/cart.svg" alt="cart-icon">
+                    <img class="navbar__profile" src="./assets/icons/profile.svg" alt="profile-icon">
                 </div>
             </section>
         </nav>
     </header>
     <main class="login">
+        <section class="login__intro">
+            <p class="login__eyebrow">SHOP.CO ACCOUNT</p>
+            <h1 class="login__heading">WELCOME BACK</h1>
+            <p class="login__description">Sign in to access your orders, saved items and exclusive offers.</p>
+        </section>
         <section class="login__card">
-            <label for="email">Email</label>
-            <input type="email">
-            <label for="password">Password</label>
-            <input type="password">
-            <button>Login</button>
+            <h2 class="login__card-heading">Log in to your account</h2>
+            <form class="login__form" action="#" method="post">
+                <div class="login__field">
+                    <label class="login__label" for="email">Email address</label>
+                    <input class="login__input" id="email" name="email" type="email" placeholder="you@example.com"
+                        required>
+                </div>
+                <div class="login__field">
+                    <label class="login__label" for="password">Password</label>
+                    <input class="login__input" id="password" name="password" type="password"
+                        placeholder="Enter your password" required>
+                </div>
+                <label class="login__remember-me">
+                    <input class="login__checkbox" type="checkbox" name="remember-me">
+                    <span>Remember me</span>
+                </label>
+                <button class="login__submit" type="submit">Log In</button>
+            </form>
+            <p class="login__signup">New to SHOP.CO? <a href="#">Create an account</a></p>
         </section>
         <section class="newsletter">
-            <h2>STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
+            <h2 class="newsletter__heading">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
             <div class="newsletter__reachout">
-                <div class="input-wrapper">
-                    <img src="#mail-ic" alt="">
-                    <input type="text" placeholder="Enter your email address">
+                <div class="newsletter__input">
+                    <img class="mail-icon" src="./assets/icons/mail.svg" alt="mail-icon">
+                    <input class="mail-input" type="text" placeholder="Enter your email address" />
                 </div>
-                <button>Subscribe to Newsletter</button>
+                <button class="newsletter__subscribe">Subscribe to Newsletter</button>
             </div>
         </section>
     </main>
-    <footer class="footer">
-        <section class="footer__grid">
-            <div>
-                <h3>A</h3>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-            </div>
-            <div>
-                <h3>A</h3>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-            </div>
-            <div>
-                <h3>A</h3>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-            </div>
-            <div>
-                <h3>A</h3>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-            </div>
+    <footer>
+        <section class="footer">
+            <section class="footer__info">
+                <h2 class="footer__brand-name">SHOP.CO</h2>
+                <p class="footer__para">We have clothes that suits your style and which you’re proud to wear. From women
+                    to men.</p>
+                <div class="footer__socials">
+                    <img class="socials-img" src="./assets/icons/twitter.svg" alt="Twitter">
+                    <img class="socials-img" src="./assets/icons/facebook.svg" alt="Facebook">
+                    <img class="socials-img" src="./assets/icons/insta.svg" alt="Instagram">
+                    <img class="socials-img" src="./assets/icons/github.svg" alt="GitHub">
+                </div>
+            </section>
+            <section class="footer__grid">
+                <div>
+                    <h3 class="grid-heading">COMPANY</h3>
+                    <h4 class="grid-content">About</h4>
+                    <h4 class="grid-content">Features</h4>
+                    <h4 class="grid-content">Works</h4>
+                    <h4 class="grid-content">Career</h4>
+                </div>
+                <div>
+                    <h3 class="grid-heading">HELP</h3>
+                    <h4 class="grid-content">Customer Support</h4>
+                    <h4 class="grid-content">Delivery Details</h4>
+                    <h4 class="grid-content">Terms &amp; Conditions</h4>
+                    <h4 class="grid-content">Privacy Policy</h4>
+                </div>
+                <div>
+                    <h3 class="grid-heading">FAQ</h3>
+                    <h4 class="grid-content">Account</h4>
+                    <h4 class="grid-content">Manage Deliveries</h4>
+                    <h4 class="grid-content">Orders</h4>
+                    <h4 class="grid-content">Payments</h4>
+                </div>
+                <div>
+                    <h3 class="grid-heading">RESOURCES</h3>
+                    <h4 class="grid-content">Free eBooks</h4>
+                    <h4 class="grid-content">Development Tutorial</h4>
+                    <h4 class="grid-content">How to - Blog</h4>
+                    <h4 class="grid-content">Youtube Playlist</h4>
+                </div>
+            </section>
         </section>
         <hr>
         <div class="footer__bottom">
-            <div class="footer__right-reserved"></div>
+            <div class="footer__right-reserved">Shop.co © 2000-2023, All Rights Reserved</div>
             <div class="footer__brand-names">
-                <img src="#" alt="">
-                <img src="#" alt="">
-                <img src="#" alt="">
-                <img src="#" alt="">
-                <img src="#" alt="">
+                <img src="./assets/images/brand-names.png" alt="brand-names">
             </div>
         </div>
     </footer>

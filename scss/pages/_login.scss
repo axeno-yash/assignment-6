@@ -1,0 +1,112 @@
+@use "../abstracts/" as *;
+
+.login {
+    font-family: "Satoshi";
+    padding: to-rem(32) to-rem(16) 0;
+
+    .login__intro {
+        max-width: to-rem(500);
+        margin: 0 auto to-rem(32);
+        text-align: center;
+    }
+
+    .login__eyebrow {
+        margin-bottom: to-rem(12);
+        color: $primary;
+        opacity: 0.6;
+        font-size: $fs-12;
+        font-weight: $fw-500;
+    }
+
+    .login__heading {
+        font-family: "Integral CF";
+        font-size: $fs-32;
+        font-weight: $fw-700;
+    }
+
+    .login__description {
+        margin-top: to-rem(12);
+        color: $primary;
+        opacity: 0.6;
+        font-size: $fs-14;
+    }
+
+    .login__card {
+        max-width: to-rem(480);
+        margin: 0 auto;
+        padding: to-rem(24);
+        border: to-rem(1) solid $black-alpha10;
+        border-radius: to-rem(20);
+        background-color: $secondary;
+    }
+
+    .login__card-heading {
+        font-size: $fs-20;
+        font-weight: $fw-700;
+    }
+
+    .login__form {
+        display: flex;
+        flex-direction: column;
+        gap: to-rem(20);
+        margin-top: to-rem(24);
+    }
+
+    .login__field {
+        display: flex;
+        flex-direction: column;
+        gap: to-rem(8);
+    }
+
+    .login__label,
+    .login__remember-me {
+        font-size: $fs-14;
+        font-weight: $fw-500;
+    }
+
+    .login__input {
+        width: 100%;
+        min-height: to-rem(48);
+        padding: 0 to-rem(16);
+        border: to-rem(1) solid $black-alpha10;
+        border-radius: to-rem(12);
+        outline: none;
+        background-color: $gray-100;
+        color: $primary;
+    }
+
+    .login__signup a {
+        color: $primary;
+        font-size: $fs-14;
+        font-weight: $fw-500;
+    }
+
+    .login__remember-me {
+        display: flex;
+        align-items: center;
+        gap: to-rem(8);
+        cursor: pointer;
+    }
+
+    .login__checkbox {
+        width: to-rem(16);
+        height: to-rem(16);
+    }
+
+    .login__submit {
+        min-height: to-rem(48);
+        border-radius: to-rem(30);
+        background-color: $primary;
+        color: $secondary;
+        font-size: $fs-16;
+        font-weight: $fw-500;
+    }
+
+    .login__signup {
+        margin-top: to-rem(24);
+        text-align: center;
+        color: $primary;
+        opacity: 0.6;
+        font-size: $fs-14;
+    }
+}
