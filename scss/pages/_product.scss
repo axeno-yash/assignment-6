@@ -150,7 +150,16 @@
                 display: flex;
                 gap: to-rem(20);
                 .product-count {
+                    background-color: $gray-300;
                     width: 30%;
+                    display: flex;
+                    gap: to-rem(38);
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: to-rem(30);
+                    .icon{
+                        width: to-rem(15);
+                    }
                 }
                 .product-cart {
                     width: 70%;

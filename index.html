@@ -36,8 +36,10 @@
                 </div>
                 <div class="navbar__cart-profile-search">
                     <img class="navbar__search" src="./assets/icons/search.svg" alt="search-icon">
-                    <img class="navbar__cart" src="./assets/icons/cart.svg" alt="cart-icon">
-                    <img class="navbar__profile" src="./assets/icons/profile.svg" alt="profile-icon">
+                    <a href="./cart.html">
+                        <img class="navbar__cart" src="./assets/icons/cart.svg" alt="cart-icon">
+                    </a>
+                    <img id="logoutBtn" class="navbar__profile" src="./assets/icons/profile.svg" alt="profile-icon">
                 </div>
             </section>
         </nav>
@@ -265,67 +267,8 @@
         </div>
     </footer>
 
-    <script>
-        const productContainer = document.querySelector('#new-arrivals-container');
-        fetch('./products.json')
-            .then(response => response.json())
-            .then(products => {
-                productContainer.innerHTML = products.map(product => `
-            <div class="product-card">
-                        <img src="${product.image}" alt="${product.name}" class="product-card__image">
-                        <h4 class="new-arrivals__product-name">${product.name}</h4>
-                        <div class="new-arrivals__rating">
-                            <div class="new-arrivals__stars">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                            </div>
-                            <h5 class="rating-h2">${product.rating}/<span class="rating-span">5</span></h5>
-                        </div>
-                        <div class="new-arrivals__pricing">
-                            <h3 class="new-arrivals__price">$${product.price}</h3>
-                            ${product.originalPrice ? `<h3 class="new-arrivals__discount">$${product.originalPrice}</h3>` : ''}
-                            ${product.discount ? `<h4 class="new-arrivals__percent">-${product.discount}%</h4>` : ''}
-                        </div>
-                    </div>
-                `).join('');
-            })
-            .catch(error => {
-                console.error('Error loading products:', error);
-            });
-
-        const topSellingContainer = document.querySelector('#top-selling-container');
-        fetch('./products.json')
-            .then(response => response.json())
-            .then(products => {
-                topSellingContainer.innerHTML = products.map(product => `
-                    <div class="topselling-card">
-                        <img src="${product.image}" alt="${product.name}" class="topselling-card__image">
-                        <h4 class="top-selling__product-name">${product.name}</h4>
-                        <div class="top-selling__rating">
-                            <div class="top-selling__stars">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                            </div>
-                            <h5 class="rating-h2">${product.rating}/<span class="rating-span">5</span></h5>
-                        </div>
-                        <div class="top-selling__pricing">
-                            <h3 class="top-selling__price">$${product.price}</h3>
-                            ${product.originalPrice ? `<h3 class="top-selling__discount">$${product.originalPrice}</h3>` : ''}
-                            ${product.discount ? `<h4 class="top-selling__percent">-${product.discount}%</h4>` : ''}
-                        </div>
-                    </div>
-                `).join('');
-            })
-            .catch(error => {
-                console.error('Error loading products:', error);
-            });
-    </script>
+    <script src="./js/pages/index.js"></script>
+    <script src="./js/pages/login.js"></script>
 </body>
 
 </html>

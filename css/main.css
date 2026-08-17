@@ -12,6 +12,12 @@
   font-family: "Satoshi";
   src: url("../../assets/fonts/Satoshi-Regular.woff2");
 }
+a {
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+}
+
 .header {
   font-family: "Satoshi";
 }
@@ -993,7 +999,16 @@
   gap: 1.25rem;
 }
 .main .product .product__content .product__count-cart .product-count {
+  background-color: #f0f0f0;
   width: 30%;
+  display: flex;
+  gap: 2.375rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.875rem;
+}
+.main .product .product__content .product__count-cart .product-count .icon {
+  width: 0.9375rem;
 }
 .main .product .product__content .product__count-cart .product-cart {
   width: 70%;
@@ -1307,6 +1322,18 @@
 }
 .main .cart .cart-section .cart-blocks .cart-block .cart-block__content {
   width: 100%;
+}
+.main .cart .cart-section .cart-blocks .cart-block .cart-block__content .product-count {
+  background-color: #f0f0f0;
+  display: flex;
+  gap: 2.375rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.875rem;
+  padding: 0.75rem 1.25rem;
+}
+.main .cart .cart-section .cart-blocks .cart-block .cart-block__content .product-count .icon {
+  width: 0.9375rem;
 }
 .main .cart .cart-section .cart-blocks .cart-block .cart-block__content .cart-block__first {
   width: 100%;

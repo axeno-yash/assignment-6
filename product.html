@@ -36,8 +36,10 @@
                 </div>
                 <div class="navbar__cart-profile-search">
                     <img class="navbar__search" src="./assets/icons/search.svg" alt="search-icon">
-                    <img class="navbar__cart" src="./assets/icons/cart.svg" alt="cart-icon">
-                    <img class="navbar__profile" src="./assets/icons/profile.svg" alt="profile-icon">
+                    <a href="./cart.html">
+                        <img class="navbar__cart" src="./assets/icons/cart.svg" alt="cart-icon">
+                    </a>
+                    <img id="logoutBtn" class="navbar__profile" src="./assets/icons/profile.svg" alt="profile-icon">
                 </div>
             </section>
         </nav>
@@ -110,9 +112,9 @@
                 <hr>
                 <section class="product__count-cart">
                     <div class="product-count">
-                        <img src="-" alt="">
-                        <h4>1</h4>
-                        <img src="+" alt="">
+                        <img class="icon" src="./assets/icons/subtract.svg" alt="subtract-icon">
+                        <h4 class="count__variable">1</h4>
+                        <img class="icon" src="./assets/icons/add.svg" alt="add-icon">
                     </div>
                     <button type="button" class="product-cart btn-reset heading-highlighted">Add to Cart</button>
                 </section>
@@ -316,37 +318,8 @@
         </div>
     </footer>
 
-    <script>
-        const RecommendationContainer = document.querySelector('#recommendation-container');
-        fetch('./products.json')
-            .then(response => response.json())
-            .then(products => {
-                RecommendationContainer.innerHTML = products.map(product => `
-                    <div class="recommendation-card">
-                        <img src="${product.image}" alt="${product.name}" class="recommendation-card__image">
-                        <h4 class="recommendation__product-name">${product.name}</h4>
-                        <div class="recommendation__rating">
-                            <div class="recommendation__stars">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                            </div>
-                            <h5 class="rating-h2">${product.rating}/<span class="rating-span">5</span></h5>
-                        </div>
-                        <div class="recommendation__pricing">
-                            <h3 class="recommendation__price">$${product.price}</h3>
-                            ${product.originalPrice ? `<h3 class="recommendation__discount">$${product.originalPrice}</h3>` : ''}
-                            ${product.discount ? `<h4 class="recommendation__percent">-${product.discount}%</h4>` : ''}
-                        </div>
-                    </div>
-                `).join('');
-            })
-            .catch(error => {
-                console.error('Error loading products:', error);
-            });
-    </script>
+    <script src="./js/pages/product.js"></script>
+    <script src="./js/pages/login.js"></script>
 </body>
 
 </html>
