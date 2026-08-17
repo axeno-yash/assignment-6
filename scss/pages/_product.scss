@@ -151,14 +151,15 @@
                 gap: to-rem(20);
                 .product-count {
                     background-color: $gray-300;
-                    width: 30%;
+                    width: 35%;
                     display: flex;
-                    gap: to-rem(38);
+                    gap: to-rem(30);
                     justify-content: center;
                     align-items: center;
                     border-radius: to-rem(30);
-                    .icon{
-                        width: to-rem(15);
+                    .icon {
+                        cursor: pointer;
+                        width: to-rem(17);
                     }
                 }
                 .product-cart {
@@ -205,7 +206,7 @@
                 }
                 .recommendation__rating {
                     display: flex;
-                    gap: to-rem(11);
+                    gap: to-rem(5);
                     align-items: center;
 
                     .rating-h2 {
@@ -219,6 +220,7 @@
                     }
                 }
                 .recommendation__pricing {
+                    padding: to-rem(4) 0;
                     display: flex;
                     gap: to-rem(5);
                     align-items: center;
@@ -310,7 +312,7 @@
     .main {
         .recommendation {
             .recommendation__blocks {
-                flex: 1 1 to-rem(220);
+                flex: 1 1;
             }
         }
     }
@@ -346,11 +348,17 @@
                     letter-spacing: 0%;
                     vertical-align: middle;
                 }
+
+                .product__count-cart {
+                    .product-count {
+                        gap: to-rem(38);
+                    }
+                }
             }
         }
 
         .recommendation {
-            padding: to-rem(72) 0 to-rem(64);
+            padding: to-rem(72) to-rem(100) to-rem(64);
 
             .recommendation__heading {
                 font-size: $fs-48;
@@ -361,14 +369,22 @@
                 flex-wrap: wrap;
                 overflow-x: visible;
                 gap: to-rem(32);
-                padding: 0 to-rem(100);
+                padding-bottom: 0;
 
                 .recommendation-card {
-                    flex: 1 1 to-rem(220);
+                    flex: 1 1;
                     .recommendation__product-name {
                         font-weight: $fw-700;
                         font-size: $fs-20;
                         padding: to-rem(16) 0 to-rem(8) 0;
+                    }
+                    .recommendation__pricing {
+                        padding: to-rem(8) 0;
+                    }
+                    .recommendation__rating {
+                        .rating-h2 {
+                            font-size: to-rem(14);
+                        }
                     }
                 }
             }

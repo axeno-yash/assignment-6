@@ -57,8 +57,8 @@ a {
 .header .navbar .navbar__menu-icon__logo {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  justify-content: normal;
+  align-items: normal;
   flex-wrap: nowrap;
   gap: 1rem;
 }
@@ -106,8 +106,8 @@ a {
   .header .navbar .navbar__menu-searchbar-icons .navbar__desktop-menu {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: normal;
+    align-items: normal;
     flex-wrap: nowrap;
     list-style: none;
     gap: 1.25rem;
@@ -332,18 +332,30 @@ a {
 .main .hero .hero__content .hero__blocks .vertical-line--1 {
   width: 0.0625rem;
   height: 3.25rem;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.1019607843);
 }
 .main .hero .hero__content .hero__blocks .vertical-line--2 {
   width: 0.0625rem;
   height: 3.25rem;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.1019607843);
   display: none;
 }
 .main .hero .hero__image {
   width: 100%;
+  position: relative;
 }
-.main .hero .hero__image img {
+.main .hero .hero__image .hero__sparkle--0 {
+  position: absolute;
+  top: 12.8125rem;
+  left: 0.9375rem;
+  width: 3.125rem;
+}
+.main .hero .hero__image .hero__sparkle--1 {
+  position: absolute;
+  top: 4.375rem;
+  right: 1.875rem;
+}
+.main .hero .hero__image .hero__image-img {
   display: block;
   width: 100%;
   height: auto;
@@ -356,10 +368,11 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  align-content: center;
   gap: 0.875rem;
 }
 .main .brand-strip .brand {
-  height: 2rem;
+  height: 1.75rem;
 }
 .main .new-arrivals {
   font-family: "Satoshi";
@@ -392,7 +405,7 @@ a {
 }
 .main .new-arrivals .new-arrivals__blocks .product-card .new-arrivals__rating {
   display: flex;
-  gap: 0.6875rem;
+  gap: 0.3125rem;
   align-items: center;
 }
 .main .new-arrivals .new-arrivals__blocks .product-card .new-arrivals__rating .rating-h2 {
@@ -410,6 +423,7 @@ a {
   align-items: center;
 }
 .main .new-arrivals .new-arrivals__blocks .product-card .new-arrivals__pricing .new-arrivals__price {
+  padding: 0.5rem 0;
   font-size: 1.25rem;
   font-weight: 700;
 }
@@ -461,7 +475,7 @@ a {
 }
 .main .top-selling .top-selling__blocks .topselling-card .top-selling__rating {
   display: flex;
-  gap: 0.6875rem;
+  gap: 0.3125rem;
   align-items: center;
 }
 .main .top-selling .top-selling__blocks .topselling-card .top-selling__rating .rating-h2 {
@@ -474,6 +488,7 @@ a {
   opacity: 0.6;
 }
 .main .top-selling .top-selling__blocks .topselling-card .top-selling__pricing {
+  padding: 0.25rem 0;
   display: flex;
   gap: 0.3125rem;
   align-items: center;
@@ -715,10 +730,10 @@ a {
     padding: 0.5rem 2rem;
   }
   .main .new-arrivals .new-arrivals__blocks {
-    flex: 1 1 13.75rem;
+    flex: 1 1;
   }
   .main .top-selling .top-selling__blocks {
-    flex: 1 1 13.75rem;
+    flex: 1 1;
   }
 }
 @media (min-width: 1200px) {
@@ -750,7 +765,7 @@ a {
     gap: 6.625rem;
   }
   .main .brand-strip .brand {
-    height: 1.5rem;
+    height: 2rem;
   }
   .main .new-arrivals {
     padding: 4.5rem 6.25rem 4rem;
@@ -766,12 +781,15 @@ a {
     gap: 2rem;
   }
   .main .new-arrivals .new-arrivals__blocks .product-card {
-    flex: 1 1 13.75rem;
+    flex: 1 1;
   }
   .main .new-arrivals .new-arrivals__blocks .product-card .new-arrivals__product-name {
     font-weight: 700;
     font-size: 1.25rem;
     padding: 1rem 0 0.5rem 0;
+  }
+  .main .new-arrivals .new-arrivals__blocks .product-card .new-arrivals__rating .rating-h2 {
+    font-size: 0.875rem;
   }
   .main .top-selling {
     padding: 4.5rem 6.25rem 4rem;
@@ -787,12 +805,18 @@ a {
     gap: 2rem;
   }
   .main .top-selling .top-selling__blocks .topselling-card {
-    flex: 1 1 13.75rem;
+    flex: 1 1;
   }
   .main .top-selling .top-selling__blocks .topselling-card .top-selling__product-name {
     font-weight: 700;
     font-size: 1.25rem;
     padding: 1rem 0 0.5rem 0;
+  }
+  .main .top-selling .top-selling__blocks .topselling-card .top-selling__pricing {
+    padding: 0.5rem 0;
+  }
+  .main .top-selling .top-selling__blocks .topselling-card .top-selling__rating .rating-h2 {
+    font-size: 0.875rem;
   }
   .main .browseby-style {
     max-width: 77.5rem;
@@ -1000,15 +1024,16 @@ a {
 }
 .main .product .product__content .product__count-cart .product-count {
   background-color: #f0f0f0;
-  width: 30%;
+  width: 35%;
   display: flex;
-  gap: 2.375rem;
+  gap: 1.875rem;
   justify-content: center;
   align-items: center;
   border-radius: 1.875rem;
 }
 .main .product .product__content .product__count-cart .product-count .icon {
-  width: 0.9375rem;
+  cursor: pointer;
+  width: 1.0625rem;
 }
 .main .product .product__content .product__count-cart .product-cart {
   width: 70%;
@@ -1049,7 +1074,7 @@ a {
 }
 .main .recommendation .recommendation__blocks .recommendation-card .recommendation__rating {
   display: flex;
-  gap: 0.6875rem;
+  gap: 0.3125rem;
   align-items: center;
 }
 .main .recommendation .recommendation__blocks .recommendation-card .recommendation__rating .rating-h2 {
@@ -1062,6 +1087,7 @@ a {
   opacity: 0.6;
 }
 .main .recommendation .recommendation__blocks .recommendation-card .recommendation__pricing {
+  padding: 0.25rem 0;
   display: flex;
   gap: 0.3125rem;
   align-items: center;
@@ -1137,7 +1163,7 @@ a {
 
 @media (min-width: 768px) {
   .main .recommendation .recommendation__blocks {
-    flex: 1 1 13.75rem;
+    flex: 1 1;
   }
 }
 @media (min-width: 1200px) {
@@ -1169,8 +1195,11 @@ a {
     letter-spacing: 0%;
     vertical-align: middle;
   }
+  .main .product .product__content .product__count-cart .product-count {
+    gap: 2.375rem;
+  }
   .main .recommendation {
-    padding: 4.5rem 0 4rem;
+    padding: 4.5rem 6.25rem 4rem;
   }
   .main .recommendation .recommendation__heading {
     font-size: 3rem;
@@ -1180,15 +1209,21 @@ a {
     flex-wrap: wrap;
     overflow-x: visible;
     gap: 2rem;
-    padding: 0 6.25rem;
+    padding-bottom: 0;
   }
   .main .recommendation .recommendation__blocks .recommendation-card {
-    flex: 1 1 13.75rem;
+    flex: 1 1;
   }
   .main .recommendation .recommendation__blocks .recommendation-card .recommendation__product-name {
     font-weight: 700;
     font-size: 1.25rem;
     padding: 1rem 0 0.5rem 0;
+  }
+  .main .recommendation .recommendation__blocks .recommendation-card .recommendation__pricing {
+    padding: 0.5rem 0;
+  }
+  .main .recommendation .recommendation__blocks .recommendation-card .recommendation__rating .rating-h2 {
+    font-size: 0.875rem;
   }
   .main .all-reviews .all-reviews__nav {
     padding: 2.25rem 6.25rem 1.5rem;

@@ -13,7 +13,19 @@ const productItems = document.querySelectorAll(".productItem");
 
 
 
-const RecommendationContainer = document.querySelector('#recommendation-container');
+const recommendationContainer = document.querySelector('#recommendation-container');
+
+function renderStars(rating) {
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 >= 0.5;
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+    return `
+        ${'<img src="./assets/icons/star.svg" alt="">'.repeat(fullStars)}
+        ${hasHalfStar ? '<img src="./assets/icons/star-half.svg" alt="">' : ''}
+        ${'<img src="./assets/icons/star-empty.svg" alt="">'.repeat(emptyStars)}
+    `;
+}
 
 const product = {
     id: Number(new URLSearchParams(window.location.search).get('id')) || 1,
@@ -45,21 +57,12 @@ document.querySelector('#minusBtn').addEventListener('click', () => {
     }
 });
 
-fetch('./products.json')
-    .then(response => response.json())
-    .then(products => {
-        RecommendationContainer.innerHTML = products.map(product => `
+recommendationContainer.innerHTML = productData.map(product => `
                     <a class="recommendation-card" href="./product.html?id=${product.id}">
                         <img src="${product.image}" alt="${product.name}" class="recommendation-card__image">
                         <h4 class="recommendation__product-name">${product.name}</h4>
                         <div class="recommendation__rating">
-                            <div class="recommendation__stars">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                                <img src="./assets/icons/star.svg" alt="rating-star">
-                            </div>
+                            ${renderStars(product.rating)}
                             <h5 class="rating-h2">${product.rating}/<span class="rating-span">5</span></h5>
                         </div>
                         <div class="recommendation__pricing">
@@ -69,7 +72,3 @@ fetch('./products.json')
                         </div>
                     </a>
                 `).join('');
-    })
-    .catch(error => {
-        console.error('Error loading products:', error);
-    });
