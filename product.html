@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="product__content">
-                <h2 class="product__content-title">ONE LIFE GRAPHIC T-SHIRT</h2>
+                <h2 class="product__content-title productItem">ONE LIFE GRAPHIC T-SHIRT</h2>
                 <div class="product__content-rating">
                     <div class="product__content-stars">
                         <img src="./assets/icons/star.svg" alt="rating-star">
@@ -83,13 +83,15 @@
                     </div>
                     <h5 class="rating-h2">4.5/<span class="rating-span">5</span></h5>
                 </div>
-                <section class="product__pricing">
+                <section class="product__pricing productItem">
                     <h3 class="product__price">$120</h3>
                     <h3 class="product__discount">$400</h3>
-                    <h4 class="product__percent">-40%</h3>
+                    <h4 class="product__percent">-40%</h4>
                 </section>
-                <p class="product__para">This graphic t-shirt which is perfect for any occasion. Crafted from a soft and
-                    breathable fabric, it offers superior comfort and style.</p>
+                <p class="product__para productItem">
+                    This graphic t-shirt which is perfect for any occasion. Crafted from a soft and
+                    breathable fabric, it offers superior comfort and style.
+                </p>
                 <hr>
                 <section class="product__colors">
                     <div class="heading-light">Select Colors</div>
@@ -112,11 +114,11 @@
                 <hr>
                 <section class="product__count-cart">
                     <div class="product-count">
-                        <img class="icon" src="./assets/icons/subtract.svg" alt="subtract-icon">
-                        <h4 class="count__variable">1</h4>
-                        <img class="icon" src="./assets/icons/add.svg" alt="add-icon">
+                        <img id="minusBtn" class="icon" src="./assets/icons/subtract.svg" alt="subtract-icon">
+                        <h4 id="quantityValue" class="count__variable productItem">1</h4>
+                        <img id="plusBtn" class="icon" src="./assets/icons/add.svg" alt="add-icon">
                     </div>
-                    <button type="button" class="product-cart btn-reset heading-highlighted">Add to Cart</button>
+                    <button type="button" class="product-cart heading-highlighted">Add to Cart</button>
                 </section>
             </div>
         </section>

@@ -1,4 +1,50 @@
+const addToCart = document.querySelector(".product-cart");
+const productItems = document.querySelectorAll(".productItem");
+
+    addToCart.addEventListener("click", () => {
+        const name = document.querySelector(".product__content-title").textContent.trim();
+        const price = document.querySelector(".product__price").textContent.trim();
+        const description = document.querySelector(".product__para").textContent.trim();
+        const quantity = document.querySelector(".count__variable").textContent.trim();
+        const items = [name, price, description, quantity];
+
+        localStorage.setItem("productItem", JSON.stringify(items))
+    });
+
+
+
 const RecommendationContainer = document.querySelector('#recommendation-container');
+
+const product = {
+    id: Number(new URLSearchParams(window.location.search).get('id')) || 1,
+    name: document.querySelector('.product__content-title').textContent,
+    price: document.querySelector('.product__price').textContent,
+    quantity: 1
+};
+
+let quantity = product.quantity;
+const quantityValue = document.querySelector('#quantityValue');
+
+quantityValue.textContent = quantity;
+
+function saveProductQuantity() {
+    product.quantity = quantity;
+}
+
+document.querySelector('#plusBtn').addEventListener('click', () => {
+    quantity++;
+    quantityValue.textContent = quantity;
+    saveProductQuantity();
+});
+
+document.querySelector('#minusBtn').addEventListener('click', () => {
+    if (quantity > 1) {
+        quantity--;
+        quantityValue.textContent = quantity;
+        saveProductQuantity();
+    }
+});
+
 fetch('./products.json')
     .then(response => response.json())
     .then(products => {

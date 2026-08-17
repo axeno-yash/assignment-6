@@ -1016,6 +1016,7 @@ a {
   outline: none;
   border: none;
   border-radius: 1.875rem;
+  cursor: pointer;
 }
 .main .recommendation {
   font-family: "Satoshi";
