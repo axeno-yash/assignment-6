@@ -39,10 +39,14 @@
                             padding: to-rem(12) to-rem(20);
                             .icon {
                                 width: to-rem(15);
+                                cursor: pointer;
                             }
                         }
                         .cart-block__first {
                             width: 100%;
+                            .delete-icon {
+                                cursor: pointer;
+                            }
                             display: flex;
                             justify-content: space-between;
                             gap: 10px;

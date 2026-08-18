@@ -1,36 +1,48 @@
 const addToCart = document.querySelector(".product-cart");
-const productItems = document.querySelectorAll(".productItem");
-
-    addToCart.addEventListener("click", () => {
-        const name = document.querySelector(".product__content-title").textContent.trim();
-        const price = document.querySelector(".product__price").textContent.trim();
-        const description = document.querySelector(".product__para").textContent.trim();
-        const quantity = document.querySelector(".count__variable").textContent.trim();
-        const items = [name, price, description, quantity];
-
-        localStorage.setItem("productItem", JSON.stringify(items))
-    });
-
-
+const CART_STORE = 'cartItems';
 
 const recommendationContainer = document.querySelector('#recommendation-container');
+const productId = Number(new URLSearchParams(window.location.search).get('id'));
+const selectedProduct = productData.find(product => product.id === productId) || productData[0];
 
 function renderStars(rating) {
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 >= 0.5;
-    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
 
     return `
         ${'<img src="./assets/icons/star.svg" alt="">'.repeat(fullStars)}
         ${hasHalfStar ? '<img src="./assets/icons/star-half.svg" alt="">' : ''}
-        ${'<img src="./assets/icons/star-empty.svg" alt="">'.repeat(emptyStars)}
     `;
 }
 
+function showProductDetails(product) {
+    document.querySelector('.product__content-title').textContent = product.name;
+    document.querySelector('.product__price').textContent = `$${product.price}`;
+
+    const originalPrice = document.querySelector('.product__discount');
+    originalPrice.textContent = product.originalPrice ? `$${product.originalPrice}` : '';
+    originalPrice.hidden = !product.originalPrice;
+
+    const discount = document.querySelector('.product__percent');
+    discount.textContent = product.discount ? `-${product.discount}%` : '';
+    discount.hidden = !product.discount;
+
+    document.querySelector('.product__content-stars').innerHTML = renderStars(product.rating);
+    document.querySelector('.product__content-rating .rating-h2').innerHTML =
+        `${product.rating}/<span class="rating-span">5</span>`;
+
+    document.querySelectorAll('.product__main-img, .tshirt-view').forEach(image => {
+        image.src = product.image;
+        image.alt = product.name;
+    });
+}
+
+showProductDetails(selectedProduct);
+
 const product = {
-    id: Number(new URLSearchParams(window.location.search).get('id')) || 1,
-    name: document.querySelector('.product__content-title').textContent,
-    price: document.querySelector('.product__price').textContent,
+    id: selectedProduct.id,
+    name: selectedProduct.name,
+    price: selectedProduct.price,
     quantity: 1
 };
 
@@ -57,6 +69,20 @@ document.querySelector('#minusBtn').addEventListener('click', () => {
     }
 });
 
+addToCart.addEventListener('click', () => {
+    const cartItems = JSON.parse(localStorage.getItem(CART_STORE)) || [];
+    const existingItem = cartItems.find(item => item.id === selectedProduct.id);    
+
+    if (existingItem) {
+        existingItem.quantity += quantity;
+    } else {
+        cartItems.push({ id: selectedProduct.id, name: selectedProduct.name, quantity });
+    }
+
+    localStorage.setItem(CART_STORE, JSON.stringify(cartItems));
+    alert(`${selectedProduct.name} added to your cart.`);
+});
+
 recommendationContainer.innerHTML = productData.map(product => `
                     <a class="recommendation-card" href="./product.html?id=${product.id}">
                         <img src="${product.image}" alt="${product.name}" class="recommendation-card__image">
@@ -72,3 +98,4 @@ recommendationContainer.innerHTML = productData.map(product => `
                         </div>
                     </a>
                 `).join('');
+                

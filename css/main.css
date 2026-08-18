@@ -1370,9 +1370,15 @@ a {
 }
 .main .cart .cart-section .cart-blocks .cart-block .cart-block__content .product-count .icon {
   width: 0.9375rem;
+  cursor: pointer;
 }
 .main .cart .cart-section .cart-blocks .cart-block .cart-block__content .cart-block__first {
   width: 100%;
+}
+.main .cart .cart-section .cart-blocks .cart-block .cart-block__content .cart-block__first .delete-icon {
+  cursor: pointer;
+}
+.main .cart .cart-section .cart-blocks .cart-block .cart-block__content .cart-block__first {
   display: flex;
   justify-content: space-between;
   gap: 10px;
