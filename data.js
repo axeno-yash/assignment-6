@@ -36,3 +36,7 @@ const productData = [
         originalPrice: 160
     }
 ];
+
+const topSellingData = [
+    
+]

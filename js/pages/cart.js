@@ -1,44 +1,62 @@
 const CART_STORE = 'cartItems';
+const COUPON_STORE = 'cartCoupon';
+const COUPONS = {
+    SAVE10: 10,
+    SAVE20: 20
+};
+
 const cartBlock = document.querySelector('.cart-blocks');
+const orderInputField = document.querySelector('.promo-code__input');
+const applyBtn = document.querySelector('.promo-code__button');
+const couponMessage = document.querySelector('.promo-code__error');
+const checkoutButton = document.querySelector('.checkout-button');
 
 function getCartItems() {
     return JSON.parse(localStorage.getItem(CART_STORE)) || [];
 }
 
 function saveCartItems(cartItems) {
-    localStorage.setItem(CART_STORE, JSON.stringify(cartItems));
+    if (cartItems.length) {
+        localStorage.setItem(CART_STORE, JSON.stringify(cartItems));
+    } else {
+        localStorage.removeItem(CART_STORE);
+        localStorage.removeItem(COUPON_STORE);
+    }
 }
 
+function getCoupon() {
+    const code = localStorage.getItem(COUPON_STORE);
+    const couponDiscount = COUPONS[code];
+    return couponDiscount ? { code, percentage: couponDiscount } : null;
+}
+
+function showCouponMessage(message, color) {
+    couponMessage.textContent = message;
+    couponMessage.style.color = color;
+    couponMessage.hidden = false;
+}
 
 function updateOrderSummary(cartItems) {
     const subtotal = cartItems.reduce((total, cartItem) => {
         const product = productData.find(product => product.id === cartItem.id);
-
-        return total + (
-            product
-                ? (product.originalPrice || product.price) * cartItem.quantity
-                : 0
-        );
+        return total + (product ? (product.originalPrice || product.price) * cartItem.quantity : 0);
     }, 0);
-
-    const discount = cartItems.reduce((total, cartItem) => {
+    const productDiscount = cartItems.reduce((total, cartItem) => {
         const product = productData.find(product => product.id === cartItem.id);
-
-        return total + (
-            product?.originalPrice
-                ? (product.originalPrice - product.price) * cartItem.quantity
-                : 0
-        );
+        return total + (product?.originalPrice ? (product.originalPrice - product.price) * cartItem.quantity : 0);
     }, 0);
-
+    const coupon = getCoupon();
+    const couponDiscount = coupon ? (subtotal - productDiscount) * (coupon.percentage / 100) : 0;
     const deliveryFee = cartItems.length ? 15 : 0;
-    const total = subtotal - discount + deliveryFee;
+    const total = subtotal - productDiscount - couponDiscount + deliveryFee;
 
     document.querySelector('.order-sequence__value--subtotal').textContent = `$${subtotal}`;
-    document.querySelector('.order-sequence__value--discount').textContent = `-$${discount}`;
+    document.querySelector('.order-sequence__value--discount').textContent = `-$${productDiscount + couponDiscount}`;
     document.querySelector('.order-sequence__value--delivery').textContent = `$${deliveryFee}`;
     document.querySelector('.order-total__value').textContent = `$${total}`;
-
+    document.querySelector('.order-sequence__label--discount').textContent = coupon
+        ? `Discount (${coupon.code})`
+        : 'Discount';
 }
 
 function renderCart() {
@@ -51,7 +69,7 @@ function renderCart() {
 
     if (!cartItems.length) {
         cartBlock.innerHTML = '<p>Your cart is empty.</p>';
-        return 0;
+        return;
     }
 
     cartBlock.innerHTML = cartItems.map(cartItem => {
@@ -84,26 +102,25 @@ function renderCart() {
 }
 
 cartBlock.addEventListener('click', event => {
-    const target = event.target.dataset;
-    const id = Number(target.id);
-    const action = target.action;
+    const { id, action } = event.target.dataset;
+    const productId = Number(id);
 
-    if (!id) return;
+    if (!productId) return;
 
     const cartItems = getCartItems();
-    const cartItem = cartItems.find(item => item.id === id);
+    const cartItem = cartItems.find(item => item.id === productId);
 
     if (action === 'delete') {
-        saveCartItems(cartItems.filter(item => item.id !== id));
-    } else if (action === 'increase') {
+        saveCartItems(cartItems.filter(item => item.id !== productId));
+    } else if (action === 'increase' && cartItem) {
         cartItem.quantity++;
         saveCartItems(cartItems);
-    } else if (action === 'decrease') {
+    } else if (action === 'decrease' && cartItem) {
         if (cartItem.quantity > 1) {
             cartItem.quantity--;
             saveCartItems(cartItems);
         } else {
-            saveCartItems(cartItems.filter(item => item.id !== id));
+            saveCartItems(cartItems.filter(item => item.id !== productId));
         }
     } else {
         return;
@@ -112,4 +129,40 @@ cartBlock.addEventListener('click', event => {
     renderCart();
 });
 
-renderCart()
+function applyCoupon() {
+    const code = orderInputField.value.trim().toUpperCase();
+
+    if (!COUPONS[code]) {
+        showCouponMessage('Enter SAVE10 or SAVE20.', 'red');
+        return 0;
+    }
+
+    localStorage.setItem(COUPON_STORE, code);
+    orderInputField.value = code;
+    showCouponMessage(`${code} applied.`, 'green');
+    renderCart();
+}
+
+applyBtn.addEventListener('click', applyCoupon);
+
+checkoutButton.addEventListener('click', () => {
+    if (!getCartItems().length) {
+        alert('Your cart is empty.');
+        return;
+    }
+
+    alert('Checkout successful! Thank you for your order.');
+    localStorage.removeItem(CART_STORE);
+    localStorage.removeItem(COUPON_STORE);
+    orderInputField.value = '';
+    couponMessage.hidden = true;
+    renderCart();
+});
+
+const savedCoupon = getCoupon();
+if (savedCoupon) {
+    orderInputField.value = savedCoupon.code;
+    showCouponMessage(`${savedCoupon.code} applied.`, 'green');
+}
+
+renderCart();

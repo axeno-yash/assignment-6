@@ -20,7 +20,9 @@
         <nav class="navbar">
             <section class="navbar__menu-icon__logo">
                 <img class="menu-icon" src="./assets/icons/menu.svg" alt="menu-icon">
-                <a href="index.html"><h2 class="brand-name">SHOP.CO</h2></a>
+                <a href="index.html">
+                    <h2 class="brand-name">SHOP.CO</h2>
+                </a>
             </section>
             <section class="navbar__menu-searchbar-icons">
                 <ul class="navbar__desktop-menu">
@@ -66,7 +68,7 @@
                             <h4 class="order-sequence__value order-sequence__value--subtotal">$0</h4>
                         </div>
                         <div class="order-sequence">
-                            <h4 class="order-sequence__label">Discount</h4>
+                            <h4 class="order-sequence__label order-sequence__label--discount">Discount</h4>
                             <h4 class="order-sequence__value order-sequence__value--discount">-$0</h4>
                         </div>
                         <div class="order-sequence">
@@ -83,6 +85,7 @@
                         <input class="promo-code__input" type="text" placeholder="Add promo code">
                         <button class="promo-code__button">Apply</button>
                     </div>
+                    <p class="promo-code__error" hidden></p>
                     <button class="checkout-button">Go to Checkout</button>
                 </section>
             </section>
