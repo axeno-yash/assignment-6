@@ -21,7 +21,7 @@
         display: flex;
         flex-direction: column;
         padding: to-rem(20) to-rem(16);
-        .product__imgs {
+        &__imgs {
             display: grid;
             grid-template-areas:
                 "main"
@@ -52,7 +52,7 @@
             }
         }
 
-        .product__content {
+        &__content {
             display: flex;
             gap: to-rem(10);
             flex-direction: column;
@@ -178,7 +178,7 @@
         font-family: "Satoshi";
         padding: to-rem(45) to-rem(10);
 
-        .recommendation__heading {
+        &__heading {
             padding-bottom: to-rem(32);
             text-align: center;
             font-family: "Integral CF";
@@ -189,7 +189,7 @@
             vertical-align: middle;
         }
 
-        .recommendation__blocks {
+        &__blocks {
             display: flex;
             gap: to-rem(20);
             overflow-x: auto;
@@ -244,7 +244,7 @@
             }
         }
 
-        .recommendation-card {
+        &-card {
             .recommendation__product-name {
                 font-weight: $fw-700;
                 font-size: $fs-16;
@@ -254,7 +254,7 @@
     }
 
     .all-reviews {
-        .all-reviews__nav {
+        &__nav {
             display: flex;
             align-items: center;
             justify-content: space-around;
@@ -262,7 +262,7 @@
             padding: to-rem(24) 0;
         }
 
-        .all-review__filter {
+        &__filter {
             display: flex;
             justify-content: space-between;
             padding: to-rem(26) to-rem(16);
@@ -311,7 +311,7 @@
 @media (min-width: $tablet) {
     .main {
         .recommendation {
-            .recommendation__blocks {
+            &__blocks {
                 flex: 1 1;
             }
         }
@@ -324,7 +324,7 @@
             padding: 0 to-rem(100);
             flex-direction: row;
             gap: to-rem(40);
-            .product__imgs {
+            &__imgs {
                 width: 40%;
                 grid-template-areas: "thumbnails main";
                 grid-template-columns: to-rem(152) minmax(0, 1fr);
@@ -338,7 +338,7 @@
                 }
             }
 
-            .product__content {
+            &__content {
                 width: 60%;
                 .product__content-title {
                     font-family: "Integral CF";
@@ -360,12 +360,12 @@
         .recommendation {
             padding: to-rem(72) to-rem(100) to-rem(64);
 
-            .recommendation__heading {
+            &__heading {
                 font-size: $fs-48;
                 padding-bottom: to-rem(55);
             }
 
-            .recommendation__blocks {
+            &__blocks {
                 flex-wrap: wrap;
                 overflow-x: visible;
                 gap: to-rem(32);
@@ -391,11 +391,11 @@
         }
 
         .all-reviews {
-            .all-reviews__nav {
+            &__nav {
                 padding: to-rem(36) to-rem(100) to-rem(24);
             }
 
-            .all-review__filter {
+            &__filter {
                 padding: to-rem(32) to-rem(100);
             }
         }

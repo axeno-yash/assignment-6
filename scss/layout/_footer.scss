@@ -7,7 +7,7 @@
     background-color: $gray-300;
     font-family: "Satoshi";
 
-    .footer__info {
+    &__info {
         padding-bottom: to-rem(32);
 
         .footer__brand-name {
@@ -26,7 +26,7 @@
         }
     }
 
-    .footer__socials {
+    &__socials {
         display: flex;
         gap: to-rem(12);
 
@@ -47,7 +47,7 @@
         }
     }
 
-    .footer__grid {
+    &__grid {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -97,7 +97,7 @@
         flex-direction: row;
         padding: to-rem(50) to-rem(100);
 
-        .footer__info {
+        &__info {
             padding-bottom: 0;
 
             .footer__brand-name {
@@ -112,7 +112,7 @@
             }
         }
 
-        .footer__grid {
+        &__grid {
             width: 90%;
             grid-template-columns: repeat(4, minmax(0, 1fr));
             column-gap: 0;

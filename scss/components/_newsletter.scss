@@ -8,14 +8,14 @@
     padding: to-rem(32) to-rem(24);
     margin: to-rem(50) to-rem(16) 0;
 
-    .newsletter__heading {
+    &__heading {
         font-family: "Integral CF";
         font-weight: $fw-700;
         font-size: $fs-32;
         line-height: to-rem(35);
     }
 
-    .newsletter__reachout {
+    &__reachout {
         padding-top: to-rem(32);
         display: flex;
         flex-direction: column;
@@ -76,11 +76,11 @@
         margin: 0 to-rem(100);
         padding: to-rem(36) to-rem(64);
 
-        .newsletter__heading {
+        &__heading {
             width: 50%;
         }
 
-        .newsletter__reachout {
+        &__reachout {
             width: 30%;
             padding-top: 0;
         }

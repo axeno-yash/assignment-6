@@ -7,7 +7,7 @@
         flex-direction: column;
         background-color: $bg;
 
-        .hero__content {
+        &__content {
             font-family: Satoshi;
             background-color: $bg;
             padding: to-rem(40) to-rem(16) 0 to-rem(16);
@@ -66,7 +66,7 @@
             }
         }
 
-        .hero__image {
+        &__image {
             width: 100%;
             position: relative;
 
@@ -109,7 +109,7 @@
         font-family: "Satoshi";
         padding: to-rem(45) to-rem(10);
 
-        .new-arrivals__heading {
+        &__heading {
             padding-bottom: to-rem(32);
             text-align: center;
             font-family: "Integral CF";
@@ -120,7 +120,7 @@
             vertical-align: middle;
         }
 
-        .new-arrivals__blocks {
+        &__blocks {
             display: flex;
             gap: to-rem(20);
             overflow-x: auto;
@@ -188,7 +188,7 @@
         font-family: "Satoshi";
         padding: to-rem(45) to-rem(10);
 
-        .top-selling__heading {
+        &__heading {
             padding-bottom: to-rem(32);
             text-align: center;
             font-family: "Integral CF";
@@ -199,7 +199,7 @@
             vertical-align: middle;
         }
 
-        .top-selling__blocks {
+        &__blocks {
             display: flex;
             gap: to-rem(20);
             overflow-x: auto;
@@ -254,7 +254,7 @@
             }
         }
 
-        .topselling-card {
+        &-card {
             .top-selling__product-name {
                 font-weight: $fw-700;
                 font-size: $fs-16;
@@ -270,7 +270,7 @@
         margin: 0 to-rem(16);
         border-radius: to-rem(20);
         background-color: $gray-300;
-        .browseby-style__heading {
+        &__heading {
             text-align: center;
             font-family: "Integral CF";
             font-weight: $fw-700;
@@ -280,7 +280,7 @@
             vertical-align: middle;
             padding: to-rem(40) to-rem(56) to-rem(28);
         }
-        .browseby-style__blocks {
+        &__blocks {
             display: flex;
             flex-direction: column;
             gap: to-rem(16);
@@ -319,7 +319,7 @@
 
     .testimonials {
         padding-bottom: to-rem(50);
-        .testimonials__heading {
+        &__heading {
             padding-top: to-rem(50);
             padding-bottom: to-rem(32);
             text-align: center;
@@ -334,7 +334,7 @@
             }
         }
 
-        .testimonials__blocks {
+        &__blocks {
             display: flex;
             flex-wrap: nowrap;
             gap: to-rem(20);
@@ -377,12 +377,12 @@
             flex-direction: row;
             align-items: stretch;
 
-            .hero__content,
-            .hero__image {
+            &__content,
+            &__image {
                 flex: 1;
             }
 
-            .hero__content {
+            &__content {
                 padding: to-rem(40) to-rem(18) to-rem(20);
                 gap: to-rem(24);
                 justify-content: center;
@@ -416,13 +416,13 @@
         }
 
         .new-arrivals {
-            .new-arrivals__blocks {
+            &__blocks {
                 flex: 1 1;
             }
         }
 
         .top-selling {
-            .top-selling__blocks {
+            &__blocks {
                 flex: 1 1;
             }
         }
@@ -432,7 +432,7 @@
 @media (min-width: $desktop) {
     .main {
         .hero {
-            .hero__content {
+            &__content {
                 padding: to-rem(100) to-rem(100) 0;
                 width: 50%;
                 gap: to-rem(32);
@@ -461,7 +461,7 @@
                 }
             }
 
-            .hero__image {
+            &__image {
                 width: 50%;
             }
         }
@@ -477,12 +477,12 @@
         .new-arrivals {
             padding: to-rem(72) to-rem(100) to-rem(64);
 
-            .new-arrivals__heading {
+            &__heading {
                 font-size: $fs-48;
                 padding-bottom: to-rem(55);
             }
 
-            .new-arrivals__blocks {
+            &__blocks {
                 flex-wrap: wrap;
                 overflow-x: visible;
                 padding-bottom: 0;
@@ -508,12 +508,12 @@
         .top-selling {
             padding: to-rem(72) to-rem(100) to-rem(64);
 
-            .top-selling__heading {
+            &__heading {
                 font-size: $fs-48;
                 padding-bottom: to-rem(55);
             }
 
-            .top-selling__blocks {
+            &__blocks {
                 flex-wrap: wrap;
                 overflow-x: visible;
                 padding-bottom: 0;
@@ -543,12 +543,12 @@
             margin: 0 auto;
             padding: 0 to-rem(64) to-rem(76);
 
-            .browseby-style__heading {
+            &__heading {
                 padding: to-rem(70) 0 to-rem(64);
                 font-size: $fs-48;
             }
 
-            .browseby-style__blocks {
+            &__blocks {
                 display: grid;
                 grid-template-columns: repeat(3, minmax(0, 1fr));
                 width: 100%;
@@ -577,7 +577,7 @@
         }
 
         .testimonials {
-            .testimonials__heading {
+            &__heading {
                 padding-top: to-rem(80);
                 padding-bottom: to-rem(55);
                 font-size: $fs-48;

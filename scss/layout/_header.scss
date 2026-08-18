@@ -40,12 +40,12 @@
             font-size: $fs-24;
         }
 
-        .navbar__menu-icon__logo {
+        &__menu-icon__logo {
             @include flexbox();
             gap: to-rem(16);
         }
 
-        .navbar__cart-profile-search {
+        &__cart-profile-search {
             display: flex;
             gap: to-rem(14);
             cursor: pointer;
@@ -68,8 +68,8 @@
             }
         }
 
-        .navbar__desktop-menu,
-        .navbar__search-bar {
+        &__desktop-menu,
+        &__search-bar {
             display: none;
         }
     }
@@ -79,7 +79,7 @@
     .header {
         .top-banner {
             height: to-rem(38);
-            .top-banner--ordinary {
+            &--ordinary {
                 font-size: $fs-14;
                 font-weight: $fw-500;
                 .top-banner--underlined {
@@ -95,12 +95,12 @@
             justify-content: flex-start;
             padding: to-rem(24) to-rem(100);
 
-            .navbar__menu-icon__logo {
+            &__menu-icon__logo {
                 justify-content: left;
                 width: 20%;
             }
 
-            .navbar__menu-searchbar-icons {
+            &__menu-searchbar-icons {
                 flex-grow: 1;
                 @include flexbox(row, space-between, center);
                 gap: to-rem(20);
@@ -145,11 +145,11 @@
                 }
             }
 
-            .navbar__search {
+            &__search {
                 display: none;
             }
 
-            .navbar__desktop-menu {
+            &__desktop-menu {
                 display: flex;
                 gap: to-rem(32);
 
@@ -158,7 +158,7 @@
                     color: $primary;
                 }
             }
-            .navbar__search-bar {
+            &__search-bar {
                 border-radius: to-rem(30);
             }
         }

@@ -3,13 +3,13 @@
 .main {
     .cart {
         padding: 0 to-rem(16);
-        .cart__heading {
+        &__heading {
             font-family: "Integral CF";
             font-weight: $fw-700;
             vertical-align: middle;
         }
 
-        .cart-section {
+        &-section {
             display: flex;
             flex-direction: column;
             gap: to-rem(20);
@@ -163,7 +163,7 @@
         .cart {
             padding: 0 to-rem(100);
 
-            .cart-section {
+            &-section {
                 flex-direction: row;
 
                 .cart-blocks {
