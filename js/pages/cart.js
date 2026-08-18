@@ -39,12 +39,16 @@ function showCouponMessage(message, color) {
 function updateOrderSummary(cartItems) {
     const subtotal = cartItems.reduce((total, cartItem) => {
         const product = productData.find(product => product.id === cartItem.id);
+
         return total + (product ? (product.originalPrice || product.price) * cartItem.quantity : 0);
     }, 0);
+
     const productDiscount = cartItems.reduce((total, cartItem) => {
         const product = productData.find(product => product.id === cartItem.id);
+
         return total + (product?.originalPrice ? (product.originalPrice - product.price) * cartItem.quantity : 0);
     }, 0);
+
     const coupon = getCoupon();
     const couponDiscount = coupon ? (subtotal - productDiscount) * (coupon.percentage / 100) : 0;
     const deliveryFee = cartItems.length ? 15 : 0;
@@ -112,6 +116,7 @@ cartBlock.addEventListener('click', event => {
 
     if (action === 'delete') {
         saveCartItems(cartItems.filter(item => item.id !== productId));
+        window.location.reload();
     } else if (action === 'increase' && cartItem) {
         cartItem.quantity++;
         saveCartItems(cartItems);
@@ -119,8 +124,6 @@ cartBlock.addEventListener('click', event => {
         if (cartItem.quantity > 1) {
             cartItem.quantity--;
             saveCartItems(cartItems);
-        } else {
-            saveCartItems(cartItems.filter(item => item.id !== productId));
         }
     } else {
         return;
@@ -133,7 +136,7 @@ function applyCoupon() {
     const code = orderInputField.value.trim().toUpperCase();
 
     if (!COUPONS[code]) {
-        showCouponMessage('Enter SAVE10 or SAVE20.', 'red');
+        showCouponMessage('Invalid Code', 'red');
         return 0;
     }
 

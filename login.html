@@ -21,7 +21,6 @@
             <section class="navbar__menu-icon__logo">
                 <img class="menu-icon" src="./assets/icons/menu.svg" alt="menu-icon">
                 <a href="index.html"><h2 class="brand-name">SHOP.CO</h2></a>
-
             </section>
             <section class="navbar__menu-searchbar-icons">
                 <ul class="navbar__desktop-menu">
@@ -37,8 +36,9 @@
                 </div>
                 <div class="navbar__cart-profile-search">
                     <img class="navbar__search" src="./assets/icons/search.svg" alt="search-icon">
-                    <a href="./cart.html">
+                    <a class="navbar__cart-icon-count" href="./cart.html">
                         <img class="navbar__cart" src="./assets/icons/cart.svg" alt="cart-icon">
+                        <span class="navbar__cart-count">1</span>
                     </a>
                     <img id="logoutBtn" class="navbar__profile" src="./assets/icons/profile.svg" alt="profile-icon">
                 </div>
@@ -137,6 +137,7 @@
         </div>
     </footer>
 
+    <script src="./js/components/header.js"></script>
     <script src="./js/pages/login.js"></script>
 </body>
 

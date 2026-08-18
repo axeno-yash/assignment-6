@@ -6,11 +6,11 @@
 
 @font-face {
   font-family: "Integral CF";
-  src: url("../../assets/fonts/Fontspring-DEMO-integralcf-regular.otf");
+  src: url("../assets/fonts/Fontspring-DEMO-integralcf-regular.otf");
 }
 @font-face {
   font-family: "Satoshi";
-  src: url("../../assets/fonts/Satoshi-Regular.woff2");
+  src: url("../assets/fonts/Satoshi-Regular.woff2");
 }
 a {
   text-decoration: none;
@@ -19,6 +19,9 @@ a {
 }
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   font-family: "Satoshi";
 }
 .header .top-banner {
@@ -48,6 +51,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 1rem;
+  background-color: #ffffff;
 }
 .header .navbar .brand-name {
   font-family: "Integral CF";
@@ -66,6 +70,21 @@ a {
   display: flex;
   gap: 0.875rem;
   cursor: pointer;
+}
+.header .navbar .navbar__cart-profile-search .navbar__cart-icon-count {
+  position: relative;
+  padding: 0.75rem;
+}
+.header .navbar .navbar__cart-profile-search .navbar__cart-icon-count .navbar__cart-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 1.875rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  text-align: center;
 }
 .header .navbar .navbar__desktop-menu,
 .header .navbar .navbar__search-bar {
@@ -1443,6 +1462,7 @@ a {
   display: flex;
   gap: 0.75rem;
   margin-top: 1.5rem;
+  padding-bottom: 1.25rem;
 }
 .main .cart .cart-section .cart-block__order .promo-code .promo-code__input {
   width: 100%;

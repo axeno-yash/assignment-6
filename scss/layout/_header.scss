@@ -1,6 +1,9 @@
 @use "../abstracts" as *;
 
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     font-family: "Satoshi";
     .top-banner {
         @include flexbox(row, space-around, center);
@@ -29,6 +32,7 @@
         justify-content: space-between;
         align-items: center;
         padding: to-rem(20) to-rem(16);
+        background-color: $secondary;
 
         .brand-name {
             font-family: "Integral CF";
@@ -45,6 +49,23 @@
             display: flex;
             gap: to-rem(14);
             cursor: pointer;
+
+            .navbar__cart-icon-count {
+                position: relative;
+                padding: to-rem(12);
+
+                .navbar__cart-count {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background-color: $primary;
+                    color: $secondary;
+                    border-radius: to-rem(30);
+                    width: to-rem(20);
+                    height: to-rem(20);
+                    text-align: center;
+                }
+            }
         }
 
         .navbar__desktop-menu,

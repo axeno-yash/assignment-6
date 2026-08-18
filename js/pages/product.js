@@ -81,6 +81,7 @@ addToCart.addEventListener('click', () => {
 
     localStorage.setItem(CART_STORE, JSON.stringify(cartItems));
     alert(`${selectedProduct.name} added to your cart.`);
+    window.location.href = "cart.html";
 });
 
 recommendationContainer.innerHTML = productData.map(product => `

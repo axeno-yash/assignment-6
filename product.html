@@ -36,8 +36,9 @@
                 </div>
                 <div class="navbar__cart-profile-search">
                     <img class="navbar__search" src="./assets/icons/search.svg" alt="search-icon">
-                    <a href="./cart.html">
+                    <a class="navbar__cart-icon-count" href="./cart.html">
                         <img class="navbar__cart" src="./assets/icons/cart.svg" alt="cart-icon">
+                        <span class="navbar__cart-count"></span>
                     </a>
                     <img id="logoutBtn" class="navbar__profile" src="./assets/icons/profile.svg" alt="profile-icon">
                 </div>
@@ -320,7 +321,8 @@
         </div>
     </footer>
 
-    <script src="./data.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/components/header.js"></script>
     <script src="./js/pages/product.js"></script>
     <script src="./js/pages/login.js"></script>
 </body>
